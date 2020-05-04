@@ -1,5 +1,6 @@
-CC = gcc
-CXX = g++
+CC = /home/utils/gcc-4.7.2/bin/gcc
+AR = ar
+CXX = /home/utils/gcc-4.7.2/bin/g++
 CFLAGS = -g -O2 
 CXXFLAG =  -O2 -Wall -ggdb -m64 -D_GNU_SOURCE=1 -D_REENTRANT -D__GUNC__ 
 
@@ -34,6 +35,9 @@ all: $(TARGET)
 
 CJsonObjectTest:$(OBJS)
 	$(CXX) -g -o $@ $^ $(LDFLAGS)
+
+libtest:demo.o
+	$(CXX) -g -o $@ $^ ../lib/libCJsonObject.a $(LDFLAGS)
 
 %.o:%.cpp
 	$(CXX) $(INC) $(CXXFLAG) -c -o $@ $< $(LDFLAGS)

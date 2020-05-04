@@ -44,4 +44,4 @@ $(LIB):$(OBJS)
 clean:
 	rm -f $(OBJS)
 	rm -f $(LIB)
-	rm -rf lib/
+	rm -rf lib/*
